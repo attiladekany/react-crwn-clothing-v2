@@ -1,11 +1,12 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithRedirect, signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
+import { getAuth, signInWithRedirect, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword } from 'firebase/auth'
 import {
     getFirestore,
     doc,
     getDoc,
     setDoc,
 } from 'firebase/firestore'
+const ANONYMOUS_ICON_PATH = 'https://resumegenius.com/wp-content/uploads/resume-profile-icon.png';
 
 const firebaseConfig = {
     apiKey: "AIzaSyAXnNI5zr_e2u7gyTNuPdTjl8aPN4iE_90",
@@ -30,7 +31,9 @@ export const signInWithGoogleRedirect = () => signInWithRedirect(auth, googlePro
 
 export const db = getFirestore();
 
-export const createUserDocumentFromAuth = async (userAuth) => {
+export const createUserDocumentFromAuth = async (userAuth, additionalInformation) => {
+    if (!userAuth) return;
+
     const userDocRef = doc(db, 'users', userAuth.uid);
 
     console.log(userDocRef)
@@ -52,7 +55,8 @@ export const createUserDocumentFromAuth = async (userAuth) => {
                 displayName,
                 email,
                 createdAt,
-                photoURL
+                photoURL: photoURL || ANONYMOUS_ICON_PATH,
+                ...additionalInformation
             });
         } catch (error) {
             console.log('error creating the user', error.message);
@@ -62,3 +66,9 @@ export const createUserDocumentFromAuth = async (userAuth) => {
     // if user data exists
     return userDocRef;
 }
+
+export const createAuthUserWithEmailAndPassword = async (email, pasword) => {
+    if (!email || !pasword) return;
+
+    return await createUserWithEmailAndPassword(auth, email, pasword);
+} 
