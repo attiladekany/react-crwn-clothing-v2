@@ -1,17 +1,17 @@
-import { useState } from "react";
+import { useState } from 'react';
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
-} from "../../utils/firebase/firebase.utils";
-import FormInput from "../form-input/form-input.component";
-import "./sign-up-form.styles.scss";
-import Button from "../button/button.component";
+} from '../../utils/firebase/firebase.utils';
+import FormInput from '../form-input/form-input.component';
+import './sign-up-form.styles.scss';
+import Button from '../button/button.component';
 
 const defaultFormFields = {
-  displayName: "",
-  email: "",
-  password: "",
-  confirmPassword: "",
+  displayName: '',
+  email: '',
+  password: '',
+  confirmPassword: '',
 };
 
 const SignUpForm = () => {
@@ -32,7 +32,7 @@ const SignUpForm = () => {
 
     const { email, displayName, password, confirmPassword } = formFields;
     if (password !== confirmPassword) {
-      alert("passwords do not match");
+      alert('passwords do not match');
       return;
     }
 
@@ -46,10 +46,10 @@ const SignUpForm = () => {
       resetFormFields();
       console.log(user);
     } catch (error) {
-      if (error.code === "auth/email-already-in-use") {
-        alert("Cannot create user, email already in use");
+      if (error.code === 'auth/email-already-in-use') {
+        alert('Cannot create user, email already in use');
       } else {
-        console.log("user creation encountered an error", error);
+        console.log('user creation encountered an error', error);
       }
     }
   };
@@ -60,7 +60,7 @@ const SignUpForm = () => {
       <span>Sign up with your email and password</span>
       <form onSubmit={handleSubmit}>
         <FormInput
-          label={"Display name"}
+          label={'Display name'}
           type="text"
           required
           onChange={handleChange}
@@ -69,7 +69,7 @@ const SignUpForm = () => {
         />
 
         <FormInput
-          label={"Email"}
+          label={'Email'}
           type="email"
           required
           onChange={handleChange}
@@ -78,7 +78,7 @@ const SignUpForm = () => {
         />
 
         <FormInput
-          label={"Password"}
+          label={'Password'}
           type="password"
           required
           onChange={handleChange}
@@ -87,7 +87,7 @@ const SignUpForm = () => {
         />
 
         <FormInput
-          label={"Confirm password"}
+          label={'Confirm password'}
           type="password"
           required
           onChange={handleChange}
