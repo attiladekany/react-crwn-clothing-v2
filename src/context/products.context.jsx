@@ -1,12 +1,18 @@
 import { createContext, useState } from 'react';
-import PRODUCTS from './../assets/shop-data.json';
 
 export const ProductsContext = createContext({
   products: [],
 });
 
 export const ProductsProvider = ({ children }) => {
-  const [products, setProducts] = useState(PRODUCTS);
+  //one time import data into firestore categories document
+  // useEffect(() => {
+  //   return () => {
+  //     addCollectionAndDocuments('categories', SHOP_DATA);
+  //   };
+  // }, []);
+
+  const [products, setProducts] = useState([]);
   const value = { products };
   return (
     <ProductsContext.Provider value={products}>
