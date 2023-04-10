@@ -4,15 +4,16 @@ import Category from '../category/category.component';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getCategoriesAndDocuments } from '../../utils/firebase/firebase.utils';
-import { setCategoriesMap } from '../../store/categories/category.action';
+import { setCategories } from '../../store/categories/category.action';
 
 const Shop = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
     const getCategoriesMap = async () => {
-      const categoriesMap = await getCategoriesAndDocuments();
-      dispatch(setCategoriesMap(categoriesMap));
+      const categoriesArray = await getCategoriesAndDocuments();
+      console.log(categoriesArray);
+      dispatch(setCategories(categoriesArray));
     };
     getCategoriesMap();
     // eslint-disable-next-line react-hooks/exhaustive-deps
