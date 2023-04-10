@@ -18,8 +18,7 @@ const App = () => {
       if (user) {
         createUserDocumentFromAuth(user);
       }
-      console.log('onAuthStateChangedListener', user);
-
+      
       dispatch(setCurrentUser(user));
     });
 
