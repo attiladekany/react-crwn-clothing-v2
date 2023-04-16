@@ -31,10 +31,8 @@ googleProvider.setCustomParameters({
 });
 
 export const auth = getAuth();
-export const signInWithGooglePopup = () =>
-    signInWithPopup(auth, googleProvider);
-export const signInWithGoogleRedirect = () =>
-    signInWithRedirect(auth, googleProvider);
+export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider);
+export const signInWithGoogleRedirect = () => signInWithRedirect(auth, googleProvider);
 
 export const db = getFirestore();
 
@@ -60,18 +58,12 @@ export const getCategoriesAndDocuments = async () => {
     return querySnapshot.docs.map(docSnapshot => docSnapshot.data());
 }
 
-export const createUserDocumentFromAuth = async (
-    userAuth,
-    additionalInformation
-) => {
+export const createUserDocumentFromAuth = async (userAuth, additionalInformation) => {
     if (!userAuth) return;
 
     const userDocRef = doc(db, 'users', userAuth.uid);
 
-    console.log(userDocRef);
-
     const userSnapshot = await getDoc(userDocRef);
-    // console.log('userSnapshot', userSnapshot.exists())
 
     // if user data !exists
     // create / set the document with the data from userAuth in my collection
@@ -95,7 +87,7 @@ export const createUserDocumentFromAuth = async (
     }
 
     // if user data exists
-    return userDocRef;
+    return userSnapshot;
 };
 
 export const createAuthUserWithEmailAndPassword = async (email, pasword) => {
@@ -111,16 +103,19 @@ export const signInAuthWithEmailAndPassword = async (email, pasword) => {
 };
 
 export const signOutUser = async () => {
-    console.log('signOutUser called');
     await signOut(auth);
 };
 
-export const onAuthStateChangedListener = (callback) => {
-    if (!callback) throw new Error('callback fn must be specified.');
+export const getCurrentUser = () => {
+    return new Promise((resolve, reject) => {
+        const unsubscribe = onAuthStateChanged(
+            auth, (userAuth) => {
+                unsubscribe();
+                resolve(userAuth);
+            },
+            reject
+        )
+    })
+}
 
-    onAuthStateChanged(auth, callback);
-};
 
-/*
-    \10 Firebase Database Storage\
-*/
