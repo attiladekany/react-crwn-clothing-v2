@@ -58,20 +58,20 @@ const PaymentForm = () => {
       }
     }
   };
-
-  <PaymentFormContainer>
-    <FormContainer onSubmit={paymentHandler}>
-      <h2>Credit Card Payment</h2>
-      <CardElement>
+  return (
+    <PaymentFormContainer>
+      <FormContainer onSubmit={paymentHandler}>
+        <h2>Credit Card Payment</h2>
+        <CardElement />
         <PaymentButton
           isLoading={isProcessingPayment}
           buttonType={BUTTON_TYPES_CLASSES.inverted}
         >
           Pay now
         </PaymentButton>
-      </CardElement>
-    </FormContainer>
-  </PaymentFormContainer>;
+      </FormContainer>
+    </PaymentFormContainer>
+  );
 };
 
 export default PaymentForm;
