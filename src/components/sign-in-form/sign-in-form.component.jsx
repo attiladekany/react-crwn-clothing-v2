@@ -7,7 +7,6 @@ import {
   emailSignInStart,
   googleSignInStart,
 } from '../../store/user/user.action';
-import { signInWithEmail } from '../../store/user/user.saga';
 
 const defaultFormFields = {
   email: '',
