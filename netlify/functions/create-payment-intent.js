@@ -6,7 +6,7 @@ exports.handler = async (event) => {
     try {
         const { amount } = JSON.parse(event.body);
 
-        const paymentIntent = await stripe.paymentIntent.create({
+        const paymentIntent = await stripe.paymentIntents.create({
             amount,
             currency: "usd",
             payment_method_types: ["card"]
