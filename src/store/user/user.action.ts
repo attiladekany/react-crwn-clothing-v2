@@ -1,5 +1,5 @@
 
-import { AdditionalUserInfo, User } from 'firebase/auth';
+import { User } from 'firebase/auth';
 import { createAction, withMatcher, Action, ActionWithPayload } from '../../utils/reducer/reducer.utils';
 import { USER_ACTION_TYPES } from "./user.action.types";
 import { AdditionalInformation, UserData } from '../../utils/firebase/firebase.utils';
