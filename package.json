@@ -6,34 +6,34 @@
     "@stripe/react-stripe-js": "2.1.0",
     "@stripe/stripe-js": "1.52.1",
     "@testing-library/jest-dom": "5.16.5",
-    "@testing-library/react": "13.4.0",
-    "@testing-library/user-event": "13.5.0",
+    "@testing-library/react": "14.0.0",
+    "@testing-library/user-event": "14.4.3",
     "@types/jest": "29.5.1",
-    "@types/node": "18.15.12",
-    "@types/react": "18.0.37",
-    "@types/react-dom": "18.0.11",
+    "@types/node": "18.16.1",
+    "@types/react": "18.2.0",
+    "@types/react-dom": "18.2.1",
     "@types/redux-logger": "3.0.9",
     "@types/styled-components": "5.1.26",
     "babel-plugin-macros": "3.1.0",
     "dotenv": "16.0.3",
-    "firebase": "9.17.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "firebase": "9.20.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "react-redux": "8.0.5",
-    "react-router-dom": "6.8.0",
+    "react-router-dom": "6.10.0",
     "react-scripts": "5.0.1",
     "redux": "4.2.1",
     "redux-logger": "3.0.6",
     "redux-persist": "6.0.0",
     "redux-saga": "1.2.3",
     "redux-thunk": "2.4.2",
-    "reselect": "4.1.7",
-    "sass": "1.58.0",
-    "stripe": "12.1.1",
-    "styled-components": "5.3.9",
+    "reselect": "4.1.8",
+    "sass": "1.62.1",
+    "stripe": "12.2.0",
+    "styled-components": "5.3.10",
     "typed-redux-saga": "1.5.0",
     "typescript": "5.0.4",
-    "web-vitals": "2.1.4"
+    "web-vitals": "3.3.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -60,6 +60,6 @@
     ]
   },
   "devDependencies": {
-    "prettier": "2.8.4"
+    "prettier": "2.8.8"
   }
 }
