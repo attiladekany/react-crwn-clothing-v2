@@ -1,5 +1,8 @@
+import { memo } from 'react';
 import './cart-item.styles.scss';
-const CartItem = ({ cartItem }) => {
+
+// unless the actual value does not change, this component does not need to be re-rendered
+const CartItem = memo(({ cartItem }) => {
   const { name, imageUrl, price, quantity } = cartItem;
   return (
     <div className="cart-item-container">
@@ -12,5 +15,5 @@ const CartItem = ({ cartItem }) => {
       </div>
     </div>
   );
-};
+});
 export default CartItem;
