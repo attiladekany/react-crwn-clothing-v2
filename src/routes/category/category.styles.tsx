@@ -7,7 +7,7 @@ export const CategoryContainer = styled.div`
   row-gap: 50px;
 
   @media screen and (max-width: 800px) {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(2, 1fr);
   }
 `;
 

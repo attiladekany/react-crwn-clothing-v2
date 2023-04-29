@@ -7,6 +7,7 @@ export const ProductCartContainer = styled.div`
   height: 350px;
   align-items: center;
   position: relative;
+  margin-bottom: 15px;
 
   img {
     width: 100%;
@@ -31,6 +32,17 @@ export const ProductCartContainer = styled.div`
     button {
       opacity: 0.85;
       display: flex;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    button {
+      display: block;
+      opacity: 0.9;
+      min-width: unset;
+      height: 70px;
+      line-height: 20px;
+      width: auto; //?? validate
     }
   }
 `;

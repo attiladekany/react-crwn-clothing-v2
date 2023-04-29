@@ -9,9 +9,15 @@ export const NavigationContainer = styled.div`
   margin-bottom: 25px;
 `;
 export const LogoContainer = styled(Link)`
+  position: relative;
   height: 100%;
   width: 70px;
   padding: 25px;
+  .logo {
+    position: absolute;
+    left: 5px;
+    top: 13px;
+  }
 `;
 
 export const NavLinks = styled.div`
@@ -24,6 +30,8 @@ export const NavLinks = styled.div`
 
 export const NavLink = styled(Link)`
   padding: 10px 15px;
+  text-align: center;
+  min-width: 90px;
   cursor: pointer;
 `;
 
