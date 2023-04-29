@@ -1,8 +1,13 @@
 import { memo } from 'react';
+import { CartItem } from '../../store/cart/cart.types';
 import './cart-item.styles.scss';
 
+type CartItemProps = {
+  cartItem: CartItem;
+};
+
 // unless the actual value does not change, this component does not need to be re-rendered
-const CartItem = memo(({ cartItem }) => {
+const CartItemComponent = memo(({ cartItem }: CartItemProps) => {
   const { name, imageUrl, price, quantity } = cartItem;
   return (
     <div className="cart-item-container">
@@ -16,4 +21,4 @@ const CartItem = memo(({ cartItem }) => {
     </div>
   );
 });
-export default CartItem;
+export default CartItemComponent;

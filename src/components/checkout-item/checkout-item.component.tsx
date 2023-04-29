@@ -3,8 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addItemToCart, clearItemFromCart, removeItemFromCart } from '../../store/cart/cart.action';
 import { selectCartItems } from '../../store/cart/cart.selector';
 import { memo } from 'react';
+import { CartItem } from '../../store/cart/cart.types';
 
-const CheckoutItem = memo(({ cartItem }) => {
+type CheckoutItemProps = {
+  cartItem: CartItem;
+};
+
+const CheckoutItem = memo(({ cartItem }: CheckoutItemProps) => {
   const dispatch = useDispatch();
   const cartItems = useSelector(selectCartItems);
 
