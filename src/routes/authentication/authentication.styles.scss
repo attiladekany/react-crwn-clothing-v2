@@ -1,6 +1,22 @@
-.authentication-container {
+.form-container {
   display: flex;
   width: 900px;
   justify-content: space-between;
   margin: 30px auto;
+
+  @media screen and (max-width: 800px) {
+    width: unset;
+    flex-direction: column;
+  }
+}
+
+.authentication-container {
+  @media screen and (max-width: 800px) {
+    display: flex;
+    justify-content: center;
+
+    .sign-up-container {
+      margin-top: 70px;
+    }
+  }
 }
