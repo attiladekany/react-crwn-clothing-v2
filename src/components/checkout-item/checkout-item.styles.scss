@@ -21,21 +21,42 @@
   .price {
     width: 23%;
   }
+  .quantity,
+  .price {
+    font-size: 22px;
+  }
 
   .quantity {
     display: flex;
 
     .arrow {
       cursor: pointer;
+      background: #e3e3e3;
+      padding: 7px;
+      border-radius: 5px;
+      font-size: 20px;
+    }
+    .arrow:hover {
+      background-color: #bbb9b9;
     }
 
     .value {
+      min-width: 26px;
+      text-align: center;
       margin: 0 10px;
     }
   }
 
   .remove-button {
-    padding-left: 12px;
+    background: #e3e3e3;
+    padding: 7px;
+    border-radius: 5px;
+    font-size: 20px;
+
     cursor: pointer;
+  }
+
+  .remove-button:hover {
+    background-color: #bbb9b9;
   }
 }
