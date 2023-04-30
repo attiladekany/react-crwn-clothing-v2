@@ -16,6 +16,12 @@
       height: 100%;
     }
   }
+  .name {
+    @media screen and (max-width: 800px) {
+      font-size: 15px;
+    }
+  }
+
   .name,
   .quantity,
   .price {
@@ -23,7 +29,14 @@
   }
   .quantity,
   .price {
-    font-size: 22px;
+    font-size: 20px;
+    margin-left: 20px;
+  }
+
+  .quantity {
+    @media screen and (max-width: 800px) {
+      width: 30%;
+    }
   }
 
   .quantity {
@@ -34,14 +47,14 @@
       background: #e3e3e3;
       padding: 7px;
       border-radius: 5px;
-      font-size: 20px;
+      font-size: 18px;
     }
     .arrow:hover {
       background-color: #bbb9b9;
     }
 
     .value {
-      min-width: 26px;
+      min-width: 22px;
       text-align: center;
       margin: 0 10px;
     }
