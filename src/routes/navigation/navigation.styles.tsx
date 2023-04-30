@@ -1,9 +1,20 @@
+import type * as CSS from 'csstype';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+export const signOutLinkStyles: CSS.Properties = {
+  minWidth: '105px',
+};
+
+export const smallShopLink: CSS.Properties = {
+  minWidth: 'unset',
+  padding: '10px 0',
+};
+
 export const AvatarContainer = styled.div`
   display: inline-block;
-`
+  min-width: 125px;
+`;
 
 export const NavigationContainer = styled.div`
   height: 70px;
