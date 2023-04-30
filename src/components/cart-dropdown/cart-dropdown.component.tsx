@@ -1,10 +1,10 @@
 import Button from '../button/button.component';
-import CartItem from '../cart-item/cart-item.component';
+import CartItemComponent from '../cart-item/cart-item.component';
 import { useNavigate } from 'react-router-dom';
 import { CartDropdownContainer, CartItems, EmptyMessage } from './cart-dropdown.styles';
 import { useSelector } from 'react-redux';
 import { selectCartItems } from '../../store/cart/cart.selector';
-import { useCallback, useState } from 'react';
+import { useCallback } from 'react';
 
 const CartDropdown = () => {
   const cartItems = useSelector(selectCartItems);
@@ -13,13 +13,14 @@ const CartDropdown = () => {
   // actual callback, that wants to be memooized, [dependency array determine when to rememoize]
   const goToCheckoutHandler = useCallback(() => {
     navigate('/checkout');
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <CartDropdownContainer>
       <CartItems>
         {cartItems.length ? (
-          cartItems.map((item) => <CartItem key={item.id} cartItem={item} />)
+          cartItems.map((item) => <CartItemComponent key={item.id} cartItem={item} />)
         ) : (
           <EmptyMessage>Your cart is empty</EmptyMessage>
         )}

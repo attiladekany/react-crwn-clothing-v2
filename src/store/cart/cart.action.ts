@@ -10,7 +10,7 @@ export const setCartItems = withMatcher(
   (cartItems: CartItem[]): SetCartItems => createAction(CART_ACTION_TYPES.SET_CART_ITEMS, cartItems)
 );
 
-export const addItemToCart = (cartItems: CartItem[], prodoctToAdd: CartItem) => {
+export const addItemToCart = (cartItems: CartItem[], prodoctToAdd: CategoryItem) => {
   const newCartItems = addCartItem(cartItems, prodoctToAdd);
   return setCartItems(newCartItems);
 };

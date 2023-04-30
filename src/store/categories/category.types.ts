@@ -12,9 +12,11 @@ export type CategoryItem = {
 };
 
 export type Category = {
+  id?: number;
+  route?: string;
   title: string;
   imageUrl: string;
-  items: Array<CategoryItem>;
+  items?: Array<CategoryItem>;
 };
 
 export type CategoryMap = {
