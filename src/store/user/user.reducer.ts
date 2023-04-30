@@ -16,7 +16,7 @@ export type UserState = {
 
 export const userReducer = (state = INITIAL_STATE, action: AnyAction) => {
   if (signInSuccess.match(action)) {
-    return { ...state, currentUser: action.payload };
+    return { ...state, currentUser: action.payload.user };
   }
 
   if (signOutSuccess.match(action)) {

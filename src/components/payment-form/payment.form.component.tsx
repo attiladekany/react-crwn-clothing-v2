@@ -5,7 +5,7 @@ import { useState, FormEvent } from 'react';
 import { useSelector } from 'react-redux';
 import { selectCartTotal } from '../../store/cart/cart.selector';
 import { selectCurrentUser } from '../../store/user/user.selector';
-import { StripeCardElement } from '@stripe/stripe-js';
+import { StripeCardElement, StripeCardElementOptions } from '@stripe/stripe-js';
 
 const ifValidCardElement = (card: StripeCardElement | null): card is StripeCardElement => card !== null;
 
@@ -62,12 +62,22 @@ const PaymentForm = () => {
       }
     }
   };
+  const options: StripeCardElementOptions = {
+    hideIcon: false,
+    iconStyle: 'solid',
+    disabled: isProcessingPayment || !(amount > 0),
+    style: {
+      base: {
+        fontSize: '20px',
+      },
+    }
+  }
   return (
     <PaymentFormContainer>
       <FormContainer onSubmit={paymentHandler}>
         <h2>Credit Card Payment</h2>
-        <CardElement />
-        <PaymentButton isLoading={isProcessingPayment} buttonType={BUTTON_TYPES_CLASSES.inverted}>
+        <CardElement options={options}/>
+        <PaymentButton disabled={!(amount > 0)} isLoading={isProcessingPayment} buttonType={BUTTON_TYPES_CLASSES.inverted}>
           Pay now
         </PaymentButton>
       </FormContainer>

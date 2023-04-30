@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+export const AvatarContainer = styled.div`
+  display: inline-block;
+`
+
 export const NavigationContainer = styled.div`
   height: 70px;
   width: 100%;
