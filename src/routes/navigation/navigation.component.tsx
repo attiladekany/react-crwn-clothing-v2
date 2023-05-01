@@ -24,6 +24,7 @@ const Navigation = () => {
   const dispatch = useDispatch();
 
   const currentUser = useSelector((state: RootState) => (state.user as UserState).currentUser);
+  const { displayName } = currentUser!;
   const isCartOpen = useSelector(selectIsCartOpen);
 
   const signOutUser = () => dispatch(signOutStart());
@@ -44,9 +45,11 @@ const Navigation = () => {
                 SIGN OUT
               </NavLink>
 
-              <AvatarContainer>
-                <span>| {currentUser.displayName} |</span>
-              </AvatarContainer>
+              {displayName ? (
+                <AvatarContainer>
+                  <span>| {displayName} |</span>
+                </AvatarContainer>
+              ) : null}
             </Fragment>
           ) : (
             <NavLink to="/auth">SIGN IN</NavLink>
