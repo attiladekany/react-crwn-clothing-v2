@@ -24,7 +24,7 @@ const Navigation = () => {
   const dispatch = useDispatch();
 
   const currentUser = useSelector((state: RootState) => (state.user as UserState).currentUser);
-  const { displayName } = currentUser!;
+  const { displayName } = currentUser ?? {};
   const isCartOpen = useSelector(selectIsCartOpen);
 
   const signOutUser = () => dispatch(signOutStart());
