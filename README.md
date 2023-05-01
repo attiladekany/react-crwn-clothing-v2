@@ -1,4 +1,6 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b8895475-5141-4113-9064-46d3609a16a0/deploy-status)](https://app.netlify.com/sites/bejewelled-arithmetic-851a00/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b8895475-5141-4113-9064-46d3609a16a0/deploy-status)](https://app.netlify.com/sites/clothing-webshop/deploys)
+
+The content of this repo is based on [Yihua Zhang' course](https://github.com/ZhangMYihua)
 
 # Getting Started with Create React App
 
